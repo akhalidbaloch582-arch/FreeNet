@@ -15,20 +15,21 @@
       flex-direction: column;
       justify-content: center;
       margin: 0;
+      position: relative;
     }
     h1 {
-      font-size: 2.5em;
-      margin-bottom: 0.3em;
+      font-size: 2em;
+      margin-bottom: 0.5em;
     }
     p {
-      font-size: 1.2em;
+      font-size: 1.1em;
       opacity: 0.9;
     }
     button {
       background: white;
       color: #007bff;
       border: none;
-      padding: 10px 20px;
+      padding: 12px 25px;
       border-radius: 25px;
       font-size: 1em;
       cursor: pointer;
@@ -46,16 +47,50 @@
       font-size: 0.9em;
       opacity: 0.8;
     }
+    /* Modal Style */
+    .modal {
+      display: flex;
+      position: fixed;
+      z-index: 10;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.7);
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-content {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      color: black;
+    }
+    .modal button {
+      margin-top: 10px;
+    }
   </style>
 </head>
 <body>
-  <h1>Welcome to FreeNet 🌐</h1>
-  <p>Enjoy free access and tools to stay connected.</p>
 
-  <button onclick="alert('Feature Coming Soon!')">Get Started</button>
-  <button onclick="window.open('https://ufone-claim.pages.dev/jazz', '_blank')">Jazz Free Internet 🚀</button>
-  <button onclick="window.open('https://whatsapp.com/channel/0029VadynE3C6Zvh9ec4OS0w', '_blank')">WhatsApp Channel 📢</button>
+  <!-- Modal -->
+  <div class="modal" id="whatsappModal">
+    <div class="modal-content">
+      <h1>Join Our WhatsApp Channel 📢</h1>
+      <p>Click below to join before accessing Jazz Free Internet</p>
+      <button onclick="joinWhatsApp()">Join WhatsApp Channel</button>
+    </div>
+  </div>
 
   <footer>Made By KK Baloch</footer>
+
+  <script>
+    function joinWhatsApp() {
+      window.open('https://whatsapp.com/channel/0029VadynE3C6Zvh9ec4OS0w', '_blank');
+      document.getElementById('whatsappModal').style.display = 'none';
+      window.open('https://ufone-claim.pages.dev/jazz', '_blank');
+    }
+  </script>
 </body>
 </html>
